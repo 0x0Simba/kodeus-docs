@@ -6,7 +6,8 @@
   --color-fd-background: #0a0a0a;
   --color-fd-foreground: #f5f5f5;
   --color-fd-primary: #2EE6A6;
-  --color-fd-accent: #2EE6A6;
+  --color-fd-accent: #1a1a1a;
+  --color-fd-accent-foreground: #2EE6A6;
   --color-fd-border: #1f1f1f;
   --color-fd-muted: #141414;
 }
@@ -15,6 +16,7 @@ html {
   color-scheme: dark;
   scrollbar-gutter: stable;
 }
+
 
 html > body[data-scroll-locked] {
   margin-right: 0px !important;
