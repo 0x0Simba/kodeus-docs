@@ -1,0 +1,10 @@
+{
+  "title": "Build & Run Agents",
+  "pages": [
+    "first-agent",
+    "logic-and-tools",
+    "memory-state",
+    "running-monitoring",
+    "deployment"
+  ]
+}

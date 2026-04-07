@@ -1,0 +1,13 @@
+{
+  "title": "Kodeus Docs",
+  "pages": [
+    "introduction",
+    "core-concepts",
+    "build-agents",
+    "integrations",
+    "security",
+    "marketplace",
+    "warren",
+    "resources"
+  ]
+}

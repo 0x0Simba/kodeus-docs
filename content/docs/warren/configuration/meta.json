@@ -1,0 +1,9 @@
+{
+  "title": "Configuration",
+  "pages": [
+    "profile",
+    "credits",
+    "autopilot",
+    "notifications"
+  ]
+}
