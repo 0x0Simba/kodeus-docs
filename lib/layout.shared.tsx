@@ -6,7 +6,6 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: <img src="/logo.svg" alt="Kodeus" className="h-6" />,
     },
-    githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
     links: [
       {
         type: 'icon',
