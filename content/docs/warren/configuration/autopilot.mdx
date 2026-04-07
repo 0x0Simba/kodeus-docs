@@ -1,6 +1,29 @@
 ---
 title: Autopilot
-description: Autopilot. Coming soon.
+description: AlphaCraft Autopilot Listener controls how aggressively Warren operates.
 ---
 
-Coming soon.
+The AlphaCraft Autopilot Listener is Warren's execution layer. It controls how much autonomy Warren has when reacting to market conditions and bot performance.
+
+## Autonomy levels
+
+- **Guided**. Warren proposes every change. You approve before anything reaches the exchange. Best for new users.
+- **Semi-auto**. Warren executes routine adjustments (rebalancing, paused-bot resumes) on its own. Material changes (deploying new strategies, increasing total exposure) still require your approval.
+- **Full auto**. Warren acts on its own across the full guardrail surface. You only see notifications after the fact.
+
+## When to move up
+
+Start with Guided. Move to Semi-auto after your first profitable week. Move to Full auto only after you trust Warren through at least one market regime change.
+
+## Controls
+
+The Autopilot tab in your profile exposes:
+
+- Autonomy level
+- Poll interval (how often Warren checks the market)
+- Auto-pause on regime shift
+- Auto-restart after emergency stop (off by default)
+
+## Hard limit
+
+Autopilot never overrides your guardrails. Max drawdown, daily loss limit, and per-position size are absolute. Warren stops, regardless of autonomy level, when any guardrail trips.

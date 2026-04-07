@@ -1,6 +1,23 @@
 ---
 title: Capital
-description: Capital. Coming soon.
+description: Set and adjust the volume Warren manages on your behalf.
 ---
 
-Coming soon.
+The capital allocation tells Warren how much of your exchange balance it can deploy across strategies. It is a hard ceiling, not a target.
+
+![Volume](/images/warren/onboarding-volume.png)
+
+## Setting your initial allocation
+
+During onboarding, Warren asks for a starting volume. Pick an amount you are comfortable losing in the worst case. A common starting point is 5 to 10 percent of your total exchange balance.
+
+## Adjusting later
+
+Open your profile and update the volume from **Preferences**. Warren rebalances on the next refresh:
+
+- Increasing the volume frees Warren to scale existing bots or deploy new strategies.
+- Decreasing the volume tells Warren to wind down positions until total exposure fits the new ceiling.
+
+## Per-strategy capital
+
+The total volume is split across active bots. Each bot has its own allocation that you set when deploying. The sum of bot allocations cannot exceed the total volume.

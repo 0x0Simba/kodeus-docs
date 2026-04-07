@@ -1,6 +1,39 @@
 ---
-title: Create
-description: Create. Coming soon.
+title: Create Strategies
+description: Use the Warren chat to generate a new strategy from a plain-English brief.
 ---
 
-Coming soon.
+If nothing in the marketplace fits, ask Warren to build one. The chat turns a plain-English brief into a structured strategy you can backtest and deploy.
+
+![Chat workflow](/images/warren/chat-workflow.png)
+
+## Example prompts
+
+- `Build me an insane BTC volatility strat`
+- `Create a mean reversion bot for ETH on the 15-minute timeframe`
+- `Design a grid strategy for SOL with 12 levels and 2 percent spacing`
+
+## The workflow visualization
+
+When Warren creates a strategy it chains several tools. The chat shows the call graph so you can see exactly what happened. A typical run looks like:
+
+`openai-websearch  ->  hyperliquid-mcp  ->  kodeus`
+
+- **openai-websearch** pulls current market context and news.
+- **hyperliquid-mcp** fetches live order book and historical price data.
+- **kodeus** assembles the strategy definition: entries, exits, sizing, and guardrails.
+
+## Risk profile prompt
+
+Before finalizing the strategy, Warren asks you to confirm a risk profile. This shapes position sizing, stop placement, and turnover.
+
+![Risk profile](/images/warren/chat-risk-profile.png)
+
+## Reviewing the output
+
+Warren returns a draft strategy card with the same fields as any marketplace strategy: description, logic summary, backtest, and risk metrics. From here you can:
+
+- Backtest it against historical data
+- Run it in Paper mode for a week
+- Deploy it as a private bot
+- Publish it to the marketplace if you want others to use it

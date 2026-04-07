@@ -1,6 +1,26 @@
 ---
 title: P/L and Win Rate
-description: P/L and Win Rate. Coming soon.
+description: How Warren calculates profit, loss, and win rate.
 ---
 
-Coming soon.
+## P/L
+
+Profit and loss is reported in two flavors.
+
+### Realized P/L
+
+The profit or loss from closed positions. This is locked in. Realized P/L only changes when a bot closes a trade.
+
+### Unrealized P/L
+
+The profit or loss on currently open positions, marked to the live market price. Unrealized P/L moves continuously and becomes realized when the position closes.
+
+The portfolio dashboard sums both. Today's P/L equals realized today plus unrealized on positions still open at end of day.
+
+## Win Rate
+
+Win rate is the percentage of closed trades that were profitable, calculated as winning trades divided by total closed trades. Open positions do not count.
+
+## What win rate does not tell you
+
+A high win rate can hide a fragile strategy. A bot with 90 percent win rate but a single catastrophic loss can still be net negative. Always read win rate alongside max drawdown and average win-to-loss ratio.

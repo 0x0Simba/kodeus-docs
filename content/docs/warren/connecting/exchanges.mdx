@@ -1,6 +1,58 @@
 ---
 title: Exchanges
-description: Exchanges. Coming soon.
+description: Connect Binance, Kraken, OKX, or Bybit to Warren via API keys. Funds never leave your exchange.
 ---
 
-Coming soon.
+Warren connects to your existing exchange accounts through API keys. Your funds never leave the exchange. Kodeus only needs trading permissions, never withdrawal access.
+
+![Connect exchange](/images/warren/connect-exchange.png)
+
+## Supported exchanges
+
+- **Binance**
+- **Kraken**
+- **OKX**
+- **Bybit**
+
+## Required permissions
+
+Every exchange exposes the same three permission scopes. Warren needs:
+
+- **Read**. Account balances, open orders, market data.
+- **Spot Trade**. Place and cancel spot orders.
+- **Withdraw**. Never enable this. Warren does not need it and you should never grant it to any third-party platform.
+
+## Generating API keys
+
+The flow is the same on every supported exchange.
+
+### Binance
+
+1. Open **Account, API Management**.
+2. Create a new key labeled `kodeus-warren`.
+3. Enable **Enable Reading** and **Enable Spot and Margin Trading**.
+4. Leave withdrawals disabled.
+5. Copy the API Key and Secret into Kodeus.
+
+### Kraken
+
+1. Open **Settings, API**.
+2. Generate a new key with `Query Funds`, `Query Open Orders`, `Query Closed Orders`, and `Create and Modify Orders` permissions.
+3. Copy the key and private key into Kodeus.
+
+### OKX
+
+1. Open **Profile, API**.
+2. Create a key with `Read` and `Trade` permissions.
+3. Set an IP whitelist if you want extra protection.
+4. Copy the API Key, Secret, and Passphrase into Kodeus.
+
+### Bybit
+
+1. Open **Account, API Management**.
+2. Create a System-generated key with `Contract Trade` and `Spot Trade` enabled, withdrawals disabled.
+3. Copy the API Key and Secret into Kodeus.
+
+## After connecting
+
+Your portfolio dashboard shows balances, open positions, and capital allocation in one view. You can connect multiple exchanges and Warren will track them all together.

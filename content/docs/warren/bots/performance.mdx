@@ -1,6 +1,21 @@
 ---
-title: Performance
-description: Performance. Coming soon.
+title: Bot Performance
+description: Read per-bot ROI, win rate, and trade history.
 ---
 
-Coming soon.
+Every bot has its own performance view. Click any bot on the dashboard to open it.
+
+## Headline metrics
+
+- **ROI**. Return on the bot's allocated capital, since deployment. Switch the window from 24h, 7d, 30d, all-time.
+- **Win Rate**. Percentage of closed trades that were profitable.
+- **Trade Count**. Total trades the bot has executed.
+- **Running Time**. How long the bot has been active.
+
+## Trade history
+
+Below the headline metrics is a chronological list of every trade the bot has placed. Each row shows entry, exit, P/L, and duration. Use this to spot patterns, like whether losses cluster around a specific time of day.
+
+## When zero is normal
+
+A bot showing zero trades for 24 hours is not necessarily broken. Many strategies wait for specific conditions and stay flat in between. If you see no activity for several days and the strategy was designed for an active regime, that is a signal to review.

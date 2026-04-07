@@ -1,6 +1,22 @@
 ---
 title: Capital Allocation
-description: Capital Allocation. Coming soon.
+description: In Trading Bay, Idle, and Open Positions explained.
 ---
 
-Coming soon.
+The Capital Allocation panel on the dashboard splits your total volume across three buckets.
+
+## In Trading Bay
+
+Capital that is committed to active bots but not currently in an open position. This is dry powder that Warren can deploy at any moment when a bot's entry conditions trigger.
+
+## Idle
+
+Capital that is in your exchange balance but not assigned to any bot. Warren cannot touch idle capital. To put it to work, raise the Trading Bay volume or deploy a new bot.
+
+## Open Positions
+
+Capital that is currently inside live trades. This is the at-risk portion. The dashboard shows it as a sum and breaks it down per bot.
+
+## Why the split matters
+
+Warren tracks the ratio between these buckets and flags inefficiencies. Too much idle for too long means your capital is not being used. Too much in open positions all the time means the strategy is over-deployed and a regime shift could hurt.
