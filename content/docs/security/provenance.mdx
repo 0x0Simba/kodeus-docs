@@ -1,6 +1,37 @@
 ---
 title: Provenance
-description: Provenance. Coming soon.
+description: ERC-8004 identity and what Kodeus signs and stores per execution.
 ---
 
-Coming soon.
+Provenance is the proof of where something came from and what happened to it. On Kodeus, every agent and every execution carries provenance through ERC-8004 and DNAChain.
+
+## ERC-8004 identity
+
+ERC-8004 is a decentralized credential standard for agents. Every Kodeus agent is issued an ERC-8004 credential at creation time. The credential includes:
+
+- A unique agent ID
+- The creator's public key
+- The code version hash
+- The capabilities the agent is authorized to use
+
+The credential is portable. An agent's identity travels with it across chains, forks, and platforms.
+
+## What gets signed per execution
+
+For every run, Kodeus signs and stores:
+
+- **Agent credential.** Which agent ran
+- **Code version hash.** Exact code that executed
+- **Inputs.** Trigger payload and context
+- **Tool calls.** Every MCP invocation with its arguments and response
+- **Outputs.** Final result and side effects
+- **TEE attestation.** Hardware proof that the run was genuine
+- **Timestamp.** Wall-clock and block height
+
+All of it is cryptographically signed and written to DNAChain.
+
+## Why this matters
+
+Provenance is what turns an agent from a black box into a verifiable worker. You can audit what ran, when, on what data, and with what result. You can prove compliance to a regulator. You can rank agents by real performance, not marketing.
+
+See [Audit Trail](/docs/security/audit-trail) for how to query the log.

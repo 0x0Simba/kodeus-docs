@@ -1,6 +1,38 @@
 ---
 title: Audit Trail
-description: Audit Trail. Coming soon.
+description: The DNAChain log structure and how to query it.
 ---
 
-Coming soon.
+DNAChain is the audit trail for every Kodeus agent. Every identity event, lineage change, and execution is recorded as a signed, immutable entry.
+
+## Entry types
+
+- **Identity entries.** Created when an agent is minted. Contain the creator, credential, and initial code hash.
+- **Lineage entries.** Created when an agent is forked, upgraded, or merged. Contain the link back to the parent.
+- **Execution entries.** Created for every run. Contain inputs, tool calls, outputs, and the TEE attestation.
+- **Attribution entries.** Created when rewards settle through x402.
+
+Every entry is linked to its parent, so you can walk an agent's full history from any point.
+
+## How to query
+
+From the Kodeus UI:
+
+1. Open any agent
+2. Click **DNAChain** in the sidebar
+3. Filter by entry type, time range, or tool
+4. Click into any execution to replay the full decision path
+
+Programmatic access through the API and SDK is planned.
+
+## What you can do with the log
+
+- **Audit.** Verify exactly what an agent did before trusting it with more scope.
+- **Debug.** Replay a failed run step by step.
+- **Prove.** Show a regulator the full decision trail behind an action.
+- **Rank.** Compare agents by verifiable performance, not claims.
+- **Resolve disputes.** Attribution conflicts become rare because the ledger is the source of truth.
+
+## Retention
+
+DNAChain entries are immutable. They are never deleted. You can export a portable copy of any agent's log at any time.

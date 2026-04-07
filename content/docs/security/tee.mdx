@@ -1,6 +1,35 @@
 ---
-title: TEE
-description: TEE. Coming soon.
+title: Trusted Execution Environment
+description: How Kodeus runs every agent inside a hardware-backed TEE.
 ---
 
-Coming soon.
+Every Kodeus agent runs inside a Trusted Execution Environment. A TEE is a hardware-isolated region of a CPU where code and data are protected from the rest of the host, including the operating system and the cloud provider.
+
+## What the TEE guarantees
+
+- **Confidentiality.** Inputs, outputs, and memory are encrypted and opaque to the host.
+- **Integrity.** The running code cannot be modified by a third party at execution time.
+- **Attestation.** The TEE produces a cryptographic proof that a specific code version ran on real, genuine hardware.
+
+## Why agents need it
+
+Agents handle secrets: API keys, wallet signatures, private data. Without a TEE, any of those can leak through a compromised host. With a TEE, even the operator running the infrastructure cannot read them.
+
+## What runs inside
+
+- The agent's decision loop
+- Tool call payloads
+- Wallet signing operations for x402 payments
+- Memory reads and writes
+
+## Attestation on DNAChain
+
+Every execution attaches a TEE attestation to its DNAChain entry. A downstream verifier can confirm that:
+
+1. The run happened on genuine TEE hardware
+2. The exact agent code version executed
+3. The result was not tampered with after the fact
+
+## What the TEE does not cover
+
+The TEE protects execution. It does not protect bad logic, misconfigured permissions, or a poorly scoped prompt. Security still starts with least-privilege tool access and human approval for high-risk actions.

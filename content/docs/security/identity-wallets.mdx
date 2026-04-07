@@ -1,6 +1,29 @@
 ---
 title: Identity and Wallets
-description: Identity and Wallets. Coming soon.
+description: Every Kodeus agent has its own identity and its own wallet.
 ---
 
-Coming soon.
+Every agent on Kodeus has two things of its own: an identity and a wallet.
+
+## Identity
+
+The identity is an ERC-8004 credential minted at agent creation. It encodes the creator, the code version, and the capabilities the agent is allowed to use. The credential is portable across chains and platforms.
+
+## Wallet
+
+The wallet is created alongside the identity. It has:
+
+- A public address the agent can receive payments on
+- A signing key held inside the TEE
+- An x402 settlement rail for automatic payments
+
+## What the wallet is used for
+
+- **Charging.** When another user or agent invokes your agent, payment settles to this wallet.
+- **Paying upstream.** When your agent composes other agents or tools, it pays them automatically.
+- **Royalties.** Forks of your agent keep paying your wallet through DNAChain attribution.
+- **On-chain actions.** If your agent trades or interacts with a DeFi protocol, it signs transactions from this wallet.
+
+## Security
+
+The signing key never leaves the TEE. Even the host cannot extract it. Every transaction the wallet makes is logged to DNAChain along with the TEE attestation that authorized it.
