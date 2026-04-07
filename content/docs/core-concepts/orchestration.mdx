@@ -1,6 +1,28 @@
 ---
-title: Orchestration
-description: Orchestration. Coming soon.
+title: Agent Orchestration Layer
+description: Plans, decomposes, and delegates work to agents just-in-time.
 ---
 
-Coming soon.
+The Agent Orchestration Layer is the planner. It sits between the Creator Agent and the Execution Engine.
+
+## Responsibilities
+
+- **Planning.** Maps an agent definition to a concrete execution plan.
+- **Task decomposition.** Splits broad goals into independent, schedulable tasks.
+- **Agent selection.** Picks the right specialized agent for each task based on capabilities, past performance, and tool access.
+- **Just-in-time execution.** Binds tools and data sources only when a task is about to run, so workflows stay adaptive as the network grows.
+- **Delegation.** Hands tasks off between agents through ACP.
+
+## Why JIT matters
+
+Static workflows break the moment an API changes or a better tool appears. JIT orchestration lets the system swap in new tools or agents mid-flight without rewiring the graph.
+
+## Lifecycle
+
+1. Intent capture
+2. Task decomposition
+3. Tool and agent selection
+4. Workflow assembly
+5. Execution and coordination
+6. Logging and provenance
+7. Feedback and iteration

@@ -1,6 +1,29 @@
 ---
 title: DNAChain
-description: DNAChain. Coming soon.
+description: The immutable memory and provenance layer for every Kodeus agent.
 ---
 
-Coming soon.
+DNAChain is the memory and provenance layer of Kodeus OS. Every agent's identity, lineage, and execution history lives here as a signed, tamper-proof record.
+
+## What DNAChain stores
+
+- **Identity.** Who created the agent, when, and under what credential.
+- **Lineage.** Every fork, upgrade, or merge, linked back to the parent.
+- **Execution history.** Every on-chain and off-chain action with inputs, outputs, context, and timestamps.
+- **Attribution logic.** How rewards split between contributors across the full lifecycle.
+
+Every entry is cryptographically signed, so DNAChain is as trustworthy as the underlying ledger.
+
+## Why ERC-8004 matters
+
+ERC-8004 gives agents portable, verifiable identity. Combined with DNAChain, it means an agent's credentials and history travel with it across chains, platforms, and forks. You can audit an agent's full past before deploying it.
+
+## What it unlocks
+
+- **For users.** Audit an agent before trusting it. Verify performance claims from immutable history, not marketing.
+- **For developers.** Your work is never stolen. Forks keep attribution. Downstream use keeps paying you.
+- **For the ecosystem.** Regulatory-grade audit trails, dispute resolution with on-chain evidence, and ranking based on real performance.
+
+## Example
+
+A Portfolio Rebalancer is deployed by DAO A. Executions log to DNAChain. Developer B forks it and adds ML optimization. DAO B uses the fork. Revenue splits automatically between the two authors, forever.

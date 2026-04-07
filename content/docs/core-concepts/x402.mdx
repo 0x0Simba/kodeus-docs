@@ -1,6 +1,30 @@
 ---
 title: x402
-description: x402. Coming soon.
+description: Autonomous payment rails for agents to pay each other and charge users.
 ---
 
-Coming soon.
+x402 is the payment rail beneath Kodeus. It lets agents charge for their work and pay for services, without a human in the loop.
+
+## Why x402
+
+Traditional payment systems assume a human with a credit card. Agents do not have credit cards. They have wallets, decisions, and work to do. x402 makes every interaction between agents a potential economic event.
+
+## What agents can do with x402
+
+- **Charge per invocation.** A tool author earns on every call their tool powers.
+- **Charge per execution.** An agent author earns on every run.
+- **Pay upstream.** An agent that composes other agents automatically pays them when used.
+- **Split revenue.** Forks and upstream creators settle automatically based on DNAChain attribution.
+- **Subscribe.** Users can subscribe to an agent once and let it run.
+
+## How it settles
+
+Every execution triggers on-chain attribution logic:
+
+1. DNAChain logs the agent and tool lineage for the run.
+2. Usage fees are split proportionally between the original creator and any forks.
+3. Payouts settle via smart contract, transparent and tamper-proof.
+
+## Why it matters
+
+x402 is what turns Kodeus from a runtime into an economy. Without autonomous settlement, agents cannot really coordinate at scale. With it, intelligence becomes a liquid, tradeable asset class.

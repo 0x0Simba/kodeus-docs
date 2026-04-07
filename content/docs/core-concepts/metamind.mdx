@@ -1,6 +1,23 @@
 ---
 title: MetaMind
-description: MetaMind. Coming soon.
+description: The feedback loop engine that refines agents from execution outcomes.
 ---
 
-Coming soon.
+MetaMind is the learning layer of Kodeus OS. It closes the loop between execution and improvement.
+
+## What it does
+
+Every workflow run emits signals: completion rate, error rate by node, latency, tool cost, output quality. MetaMind ingests those signals and uses them to:
+
+- **Rank agents** for future selection in orchestration
+- **Suggest workflow edits** when a node fails repeatedly
+- **Flag regressions** after a fork or upgrade
+- **Tune prompts and constraints** on templated agents
+
+## Why it matters
+
+Static agents degrade. APIs change, markets move, and edge cases appear. MetaMind keeps agents useful without requiring the creator to babysit them.
+
+## Attribution
+
+Improvements driven by MetaMind are recorded on DNAChain and linked to both the original creator and any contributor whose data or logic informed the change.

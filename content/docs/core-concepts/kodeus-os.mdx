@@ -1,6 +1,38 @@
 ---
 title: Kodeus OS
-description: Kodeus OS. Coming soon.
+description: The seven components of the Open Agentic Operating System.
 ---
 
-Coming soon.
+Kodeus OS is built like a modular operating system for autonomous agents. Seven components cover everything from intent capture to settlement.
+
+## Creator Agent
+
+Turns a natural language prompt into a structured agent definition. Inputs: a goal and constraints. Outputs: a runnable agent. See [Creator Agent](/docs/core-concepts/creator-agent).
+
+## TAD (Tools, Agents, Data)
+
+The repository of reusable, interoperable building blocks. Every tool, agent, and data source on Kodeus lives here as a composable asset. See [TAD](/docs/core-concepts/tad).
+
+## Agent Orchestration Layer
+
+Plans workflows, decomposes tasks, and assigns them to the right agents just-in-time. See [Orchestration](/docs/core-concepts/orchestration).
+
+## Multi-Agent Execution Engine
+
+Runs the workflows inside a TEE. Handles concurrency, state, and resource limits. See [Execution Engine](/docs/core-concepts/execution-engine).
+
+## ACP (Agent Communication Protocol)
+
+The peer-to-peer messaging standard agents use to discover each other, share state, and delegate tasks. Aligned with MCP and A2A. See [ACP](/docs/core-concepts/acp).
+
+## MetaMind
+
+The feedback loop engine. Learns from execution outcomes and refines agent behavior over time. See [MetaMind](/docs/core-concepts/metamind).
+
+## DNAChain
+
+The immutable memory and provenance layer. Every identity, fork, upgrade, and execution event is signed and stored. See [DNAChain](/docs/core-concepts/dnachain).
+
+A separate settlement layer, [x402](/docs/core-concepts/x402), handles autonomous payments between agents.
+
+> Architecture diagram coming soon.

@@ -1,6 +1,22 @@
 ---
-title: Execution Engine
-description: Execution Engine. Coming soon.
+title: Multi-Agent Execution Engine
+description: The runtime that executes multi-agent workflows inside a Trusted Execution Environment.
 ---
 
-Coming soon.
+The Multi-Agent Execution Engine is the runtime layer of Kodeus OS. It runs the plans that come out of the Orchestration Layer.
+
+## What it handles
+
+- **Concurrency.** Runs many agents in parallel and coordinates their handoffs.
+- **State.** Holds workflow state across steps and recovers cleanly from interruptions.
+- **Resource limits.** Enforces cost, rate, and time budgets per workflow.
+- **Isolation.** Executes every agent inside a TEE so code and data stay confidential even from the host.
+- **Feedback.** Streams execution telemetry to MetaMind and provenance entries to DNAChain.
+
+## Failure behavior
+
+If one agent in a workflow fails, the engine can reassign the task to another agent or fall back to a safe path. The full failure context is logged so you can replay and debug.
+
+## Performance
+
+JIT execution, parallel agent scheduling, and cached context deliver fast workflows even at high concurrency. Every run is verifiable end-to-end.

@@ -1,6 +1,25 @@
 ---
-title: ACP
-description: ACP. Coming soon.
+title: ACP (Agent Communication Protocol)
+description: The peer-to-peer standard agents use to discover, coordinate, and delegate.
 ---
 
-Coming soon.
+ACP is the Agent Communication Protocol. It is how Kodeus agents find each other, share state, and pass work back and forth.
+
+## What ACP does
+
+- **Discovery.** An agent can locate other agents by capability, tool access, and past performance.
+- **Messaging.** Structured messages with typed payloads and signed metadata.
+- **Delegation.** A planner agent can hand a task to a specialist and receive a result.
+- **State handoff.** Workflow state moves between agents without going through a central broker.
+
+## Relationship to other standards
+
+- **MCP** is the protocol agents use to talk to tools.
+- **ACP** is the protocol agents use to talk to other agents.
+- **A2A** patterns are supported for cross-system coordination.
+
+## Why peer-to-peer
+
+Central brokers become bottlenecks. ACP lets agents exist anywhere in the network, coordinate directly, and run workflows that span chains, data sources, and execution environments.
+
+Every ACP interaction is logged on DNAChain, so the full decision trail is auditable after the fact.

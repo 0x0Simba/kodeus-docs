@@ -1,6 +1,28 @@
 ---
 title: Creator Agent
-description: Creator Agent. Coming soon.
+description: The component that turns natural language prompts into runnable agent definitions.
 ---
 
-Coming soon.
+The Creator Agent is the front door of Kodeus OS. It turns a plain-language prompt into a structured, runnable agent.
+
+## Inputs
+
+- A goal stated in natural language
+- Constraints (scope, cost limits, approval rules, allowed data sources)
+- Optional references to existing agents or tools
+
+## What it does
+
+1. **Parses intent.** Extracts the outcome, success criteria, and failure criteria from the prompt.
+2. **Decomposes tasks.** Breaks the goal into independent sub-tasks.
+3. **Discovers resources.** Searches TAD for the right tools, agents, and data sources.
+4. **Assembles the workflow.** Wires triggers, context retrieval, decision logic, action nodes, and fallbacks.
+5. **Produces an agent definition.** A signed, forkable artifact ready for the Execution Engine.
+
+## Outputs
+
+- A structured agent definition
+- A proposed toolset (MCP connectors)
+- A dry-run preview of the workflow
+
+You can accept, edit, or reject the output before running. Nothing touches production until you promote it.
