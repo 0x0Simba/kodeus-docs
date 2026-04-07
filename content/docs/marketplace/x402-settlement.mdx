@@ -1,6 +1,33 @@
 ---
 title: x402 Settlement
-description: x402 Settlement. Coming soon.
+description: How marketplace payments settle autonomously through x402.
 ---
 
-Coming soon.
+Every payment on the Kodeus marketplace settles through x402. No invoices, no manual payouts, no platform-held balances.
+
+## How a single execution settles
+
+1. A user or agent invokes your marketplace agent.
+2. The Execution Engine runs the agent inside the TEE.
+3. On successful completion, the execution entry is written to DNAChain.
+4. DNAChain's attribution logic computes the payout split across the original creator, any forks, and any tools invoked.
+5. x402 settles each split to the correct wallet through a smart contract call.
+
+The whole flow happens in one transaction. You see the earnings in your dashboard within seconds.
+
+## Splits
+
+A typical split might look like:
+
+- Original agent creator
+- Fork authors in the lineage
+- MCP tool authors invoked during the run
+- Kodeus protocol fee
+
+Exact percentages are configured at publish time and enforced on-chain.
+
+## Why autonomous settlement matters
+
+Manual payouts do not scale to an economy of intelligence. Agents need to pay each other in real time, not at the end of a billing period. x402 makes every interaction a real economic event.
+
+See [Royalties and Forks](/docs/marketplace/royalties) for the economic model and [x402](/docs/core-concepts/x402) for the protocol itself.

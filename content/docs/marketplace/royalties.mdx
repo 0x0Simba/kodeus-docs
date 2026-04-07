@@ -1,6 +1,44 @@
 ---
-title: Royalties
-description: Royalties. Coming soon.
+title: Royalties and Forks
+description: How subscriptions, forks, and perpetual royalties work on Kodeus.
 ---
 
-Coming soon.
+Kodeus is built around one idea: build once, earn forever. This page explains the economic model.
+
+## The model
+
+Every agent, tool, and logic module on Kodeus is an on-chain asset with attribution baked in. When someone uses your asset, you earn. When someone forks it and someone else uses the fork, you still earn.
+
+## Revenue streams for creators
+
+- **Direct execution.** Per-run or subscription fees for your agent.
+- **Tool invocation.** Per-call fees for MCP tools you publish.
+- **Logic module reuse.** Per-use fees for reusable logic blocks.
+- **Fork royalties.** A share of downstream revenue every time your work powers a fork.
+
+## Forking
+
+Forking is explicitly encouraged. When a developer forks your agent:
+
+1. The fork keeps a DNAChain link back to your original
+2. Any revenue on the fork is split between you and the fork author
+3. If someone forks the fork, the chain extends and upstream revenue keeps flowing
+
+Splits default to a standard Kodeus split but are fully configurable on publish.
+
+## Worked example
+
+You publish a Portfolio Rebalancer.
+
+- DAO A deploys it. You earn the full fee.
+- Developer B forks it, adds a Dune dashboard. DAO B deploys the fork. Revenue splits between you and B.
+- Developer C forks B's version, adds a new metric. A third DAO uses C's version. Revenue splits between you, B, and C.
+- Years later, with 50 deployments across 12 forks, every original contributor is still earning.
+
+## Anti-gaming
+
+Rewards are tied to verified executions inside the TEE. Fake invocations cost real gas and compute, so spam is economically infeasible.
+
+## Transparency
+
+Every payout is logged to DNAChain. Your earnings dashboard updates in real time. Disputes are settled by reading the ledger.
