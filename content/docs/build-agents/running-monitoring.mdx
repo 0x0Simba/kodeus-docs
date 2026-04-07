@@ -1,6 +1,47 @@
 ---
 title: Running and Monitoring
-description: Running and Monitoring. Coming soon.
+description: Run agents, read logs, and inspect the DNAChain trace.
 ---
 
-Coming soon.
+Once your agent is built, running and monitoring it is straightforward.
+
+## Starting a run
+
+- **Manual.** Click **Run** in the editor.
+- **Scheduled.** Enable the schedule and Kodeus runs it for you.
+- **Triggered.** Enable the event or webhook trigger.
+
+## The run view
+
+Every execution has a run view that shows:
+
+- The plan the orchestrator built
+- Each node's status (pending, running, succeeded, failed)
+- Tool calls with inputs and outputs
+- Latency and cost per node
+- The final output
+
+## Metrics that matter
+
+Track these four:
+
+- **Completion rate.** Percentage of runs that finish successfully
+- **Error rate by node.** Where failures concentrate
+- **Mean execution latency.** How long a run takes end-to-end
+- **Alert quality.** Signal-to-noise of any notifications the agent emits
+
+## The DNAChain trace
+
+Click into any run to open the DNAChain trace. Every step is signed and stored, including inputs, outputs, context, timestamps, and which tool version ran. You can replay the full decision path after the fact.
+
+## Debugging a failure
+
+1. Open the failing run
+2. Find the red node in the run view
+3. Check the failed node's payload and tool response
+4. Re-run with a smaller scope
+5. Fix the logic or constraints, then promote a new version
+
+## Alerts
+
+Configure alerts on completion rate, error rate, and latency. Route them to Telegram, Slack, or email through MCP.

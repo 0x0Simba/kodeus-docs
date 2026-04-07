@@ -1,6 +1,29 @@
 ---
 title: Memory and State
-description: Memory and State. Coming soon.
+description: How Kodeus agents remember, persist state, and scope memory across runs.
 ---
 
-Coming soon.
+Every Kodeus agent has its own memory. Memory is durable, scoped, and auditable through DNAChain.
+
+## Scopes
+
+- **Run memory.** Holds state for a single execution. Cleared after the run finishes.
+- **Agent memory.** Persists across runs for a single agent. Good for tracking what has already been handled.
+- **Shared memory.** Accessible to multiple agents in the same workflow. Used for coordination during multi-agent runs.
+
+## What you can store
+
+- Structured state (counters, flags, last-processed IDs)
+- Documents and embeddings for RAG
+- Tool call results that should be reused
+
+## Persistence
+
+Agent memory is written through DNAChain so every read and write is logged. You can replay any execution to see exactly what the agent knew at every step.
+
+## Best practices
+
+- Keep run memory small to reduce cost
+- Use agent memory to avoid duplicate work
+- Expire stale entries with TTLs
+- Never store secrets in memory, use the secrets vault

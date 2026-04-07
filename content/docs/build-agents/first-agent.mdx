@@ -1,6 +1,43 @@
 ---
 title: Your First Agent
-description: Your First Agent. Coming soon.
+description: Walk through building a working Kodeus agent from a single prompt.
 ---
 
-Coming soon.
+This page walks through creating your first Kodeus agent. We use a DAO governance tracker as the example, but the same flow applies to any workflow.
+
+## 1. Define the outcome
+
+Write the outcome, success criteria, and failure criteria in one paragraph.
+
+> "Track new proposals on DAO X. Summarize each one. Post the summary to my Telegram within five minutes of it appearing. Success: every proposal is delivered. Failure: missed proposal or bad summary."
+
+## 2. Open the Creator Agent
+
+From the dashboard, open the Creator Agent. Paste the outcome. The Creator Agent parses your intent into structured goals.
+
+## 3. Set boundaries
+
+Fill in the scope:
+
+- **Allowed data sources.** DAO X governance feed
+- **In-scope systems.** Telegram
+- **Cost and rate limits.** Max 10 LLM calls per proposal
+- **Human approval.** None required for read-only tracking
+
+## 4. Review the generated workflow
+
+Kodeus proposes a workflow with a trigger (new proposal), a context step (fetch proposal body), a summarization node, and an action node (post to Telegram). Review each node. Edit anything that does not match your intent.
+
+## 5. Attach tools
+
+The Creator Agent picks MCP connectors automatically. Confirm the DAO feed and Telegram tools, then authenticate each one.
+
+## 6. Dry run
+
+Run the agent in test mode against a historical proposal. Verify the summary quality, the post format, and the latency. Check the execution trace in DNAChain.
+
+## 7. Promote to production
+
+When the dry run is clean, promote the agent. It starts running on its schedule with full provenance.
+
+Next: [Logic and Tools](/docs/build-agents/logic-and-tools).

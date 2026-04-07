@@ -1,6 +1,39 @@
 ---
 title: Logic and Tools
-description: Logic and Tools. Coming soon.
+description: Define agent behavior, attach MCP tools, and set triggers.
 ---
 
-Coming soon.
+Every Kodeus agent is built from four parts: a trigger, context retrieval, decision logic, and action nodes.
+
+## Triggers
+
+Triggers are what start a run. Supported trigger types:
+
+- **Schedule.** Run every N minutes, hours, or on a cron expression.
+- **Event.** Run when an external event occurs (new proposal, wallet move, price cross).
+- **Webhook.** Run when a URL is called.
+- **Manual.** Run only when you click.
+
+## Context retrieval
+
+Before the agent acts, it gathers context. This can be a tool call (fetch proposal body), a memory lookup (what did I do last time), or a data query (current prices).
+
+## Decision logic
+
+The agent reasons over the context. You can constrain the logic with:
+
+- **Prompt templates.** Lock down the objective, output format, and escalation rules.
+- **Conditions.** Route to different actions based on data.
+- **Budgets.** Cap token, tool, and time spend per run.
+
+## Action nodes
+
+Actions are the side effects. Swap a token, post a message, write to a database, call another agent. Every action runs through an MCP tool.
+
+## Attaching tools
+
+In the agent editor, click **Add tool**, pick from the MCP catalog, authenticate, and drop the tool into the action node that needs it. Tools can be shared across nodes in the same workflow.
+
+## Fallbacks
+
+Every action node should have a fallback: retry, alternate tool, or human escalation. Agents without fallbacks are brittle.
