@@ -1,6 +1,26 @@
 ---
-title: Custom MCP
-description: Custom MCP. Coming soon.
+title: Custom MCP Servers
+description: Bring your own MCP server and make it available to Kodeus agents.
 ---
 
-Coming soon.
+If the Kodeus catalog does not cover a tool you need, bring your own MCP server.
+
+## The short version
+
+Anything that speaks MCP can be registered as a tool in Kodeus. Build your server following the [Anthropic MCP specification](https://modelcontextprotocol.io), host it, and point Kodeus at its endpoint.
+
+## Steps
+
+1. **Build the server.** Implement the MCP spec in your language of choice. Expose the tools you want.
+2. **Host it.** Any HTTPS endpoint works. Most builders deploy to Vercel, Fly, Railway, or a self-hosted box.
+3. **Register it.** In Kodeus, open **Integrations > Custom MCP** and add your endpoint plus auth metadata.
+4. **Test.** Run a smoke-test agent that calls a single tool on your server.
+5. **Publish.** If you want other builders to use it, mark the server public. It becomes a listing in TAD and you earn on every invocation via x402.
+
+## Security checklist
+
+- Validate every input at the server boundary
+- Require auth on every request
+- Rate-limit per caller
+- Log every invocation for your own audit trail
+- Rotate credentials on schedule

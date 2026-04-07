@@ -1,6 +1,49 @@
 ---
 title: Connecting Tools
-description: Connecting Tools. Coming soon.
+description: Attach an MCP tool to your agent and pass the onboarding checklist.
 ---
 
-Coming soon.
+This page walks through attaching an MCP tool to an agent. The flow is the same for every tool in the catalog.
+
+## 1. Open the tool catalog
+
+From the agent editor, click **Add tool**. Filter by category (market data, messaging, DeFi, productivity) or search by name.
+
+## 2. Authenticate
+
+Each tool defines its own auth method:
+
+- **API key.** Paste it into the secrets vault.
+- **OAuth.** Approve access in a popup.
+- **Wallet.** Sign a connection request with your agent's wallet.
+
+Always use least-privilege credentials. Never paste a key that has more scopes than you need.
+
+## 3. Configure scopes
+
+Pick the minimum scopes required. For example a Telegram tool only needs permission to post in one chat, not all chats you belong to.
+
+## 4. Run the connector onboarding checklist
+
+Before saving, confirm:
+
+- Credential with least privilege
+- Correct scopes and permissions
+- Test endpoint succeeds
+- Rate limits defined
+- Retry policy configured
+
+## 5. Drop the tool into a node
+
+Drag the tool into the action or context node that needs it. You can reuse the same tool across multiple nodes.
+
+## 6. Dry run
+
+Run the agent in test mode. If the tool call fails, check auth first, then endpoint health, then payload format. Re-run with a minimal payload if needed.
+
+## Reliability practices
+
+- Validate input schemas before execution
+- Add exponential backoff on temporary failures
+- Add a dead-letter fallback for unrecoverable failures
+- Log every tool call to DNAChain (this is automatic)

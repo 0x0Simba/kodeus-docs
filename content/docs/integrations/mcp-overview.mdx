@@ -1,6 +1,34 @@
 ---
 title: MCP Overview
-description: MCP Overview. Coming soon.
+description: How Kodeus uses the Model Context Protocol to connect agents to 4,000+ tools.
 ---
 
-Coming soon.
+MCP is the Model Context Protocol. It is the standard way Kodeus agents discover and invoke external tools, APIs, and data sources.
+
+## Why MCP
+
+Before MCP, every agent platform invented its own connector format. That meant brittle glue code and tool lock-in. MCP fixes that with a shared protocol. Any tool that speaks MCP can be used by any Kodeus agent. Any MCP server you run today can be plugged into Kodeus tomorrow.
+
+## The Kodeus catalog
+
+Kodeus ships with 4,000+ MCP tools out of the box, spanning:
+
+- **Market and data providers.** DexScreener, CoinMarketCap, price feeds, on-chain indexers
+- **Messaging and notifications.** Telegram, Slack, Discord, email
+- **Internal knowledge systems.** Notion, Jira, Confluence, Google Drive
+- **Transaction and execution systems.** Uniswap, Hyperliquid, wallet RPCs, Web2 REST APIs
+
+Every tool is categorized, versioned, and rate-limit-aware.
+
+## How agents use MCP
+
+An agent declares which tools it needs. At run time the Orchestration Layer binds those tool handles to live MCP connectors just in time. If a better version of a tool appears, the orchestrator can swap it in without rewiring the agent.
+
+## What MCP gives you
+
+- A single protocol across every tool
+- Least-privilege auth per tool
+- Structured input schemas and typed responses
+- Tool call logs written to DNAChain
+
+See [Connecting Tools](/docs/integrations/connecting-tools) to attach your first one.
