@@ -3,23 +3,29 @@ title: Managing Bots
 description: Pause, stop, reallocate, and delete bots from the active-bots panel.
 ---
 
-The active-bots panel on the dashboard is your control surface for every running, paused, and stopped bot.
+The active-bots panel on the dashboard is the control surface for every running, paused, and stopped bot. It shows the performance table with ROI, status, and recent trades for each bot.
+
+![Bots management](/images/warren/bots-management.png)
 
 ## Pause
 
-Pauses execution. Open positions stay open, no new orders are placed. Use this when you want to temporarily halt a bot without closing positions, for example during high-impact news.
+Pauses execution. Open positions stay open, no new orders are placed. Use this to temporarily halt a bot without closing positions, for example during high-impact news.
 
 ## Stop
 
-Closes all open positions and shuts down the bot. Use this when you are done with a strategy or when Warren flags it as underperforming.
+Closes all open positions and shuts down the bot. Use this when done with a strategy or when Warren flags it as underperforming.
 
 ## Reallocate
 
-Adjusts the capital assigned to a bot without restarting it. Increase to scale up a winner. Decrease to take risk off the table. Reallocation respects your total volume ceiling.
+Adjusts the capital assigned to a bot without restarting it. Increase to scale up a winner. Decrease to take risk off the table. Reallocation respects the total volume ceiling.
+
+## Stop-loss and take-profit
+
+Warren actively manages SL/TP levels on every open position. When market conditions change, Warren adjusts these levels and reallocates capital across bots to optimize yield. Users define the outer bounds; Warren operates within them.
 
 ## Delete
 
-Removes the bot from the dashboard. Available only after a bot has been stopped. Trade history is retained in your portfolio for accounting.
+Removes the bot from the dashboard. Available only after a bot has been stopped. Trade history is retained in the portfolio for accounting.
 
 ## Bulk actions
 
@@ -27,4 +33,4 @@ The active-bots panel supports multi-select. Pause or stop multiple bots at once
 
 ## Warren's underperformance line
 
-Warren draws a horizontal line on the active-bots panel separating performing and underperforming bots. If a bot drops below the line, Warren shows a red warning. Consider pausing or stopping the bot to avoid further losses.
+Warren draws a horizontal line on the active-bots panel separating performing and underperforming bots. If a bot drops below the line, Warren shows a red warning. Pausing or stopping the bot avoids further losses.

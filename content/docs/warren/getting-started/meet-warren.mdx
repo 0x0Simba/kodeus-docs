@@ -1,28 +1,33 @@
 ---
 title: Meet Warren
-description: Warren is the AI trading assistant inside Kodeus. It analyzes markets, suggests strategies, and helps you trade.
+description: Warren is a private AI fund manager agent that delivers institutional-grade trading strategies for retail users.
 ---
 
-Warren is the AI fund manager built into Kodeus Trading Bay. You talk to Warren in plain English and it does three things:
+![Welcome to Kodeus](/images/warren/welcome-login.png)
 
-1. **Analyzes markets** in real time across major pairs
-2. **Discovers and creates strategies** matched to your risk profile
-3. **Runs bots** that execute strategies on your connected exchange
+Warren is a private AI fund manager agent inside Kodeus Trading Bay. It understands each user's capital, risk profile, and preferences, then orchestrates institutional-grade trading strategies on their behalf.
 
-Warren is not a chatbot. Not a signal group. Not a copy-trade service. It is an autonomous execution agent that operates on your behalf, within limits you define.
+Warren covers the full strategy lifecycle:
+
+1. **Recommends strategies** based on market regime, user intent, and real-time signals
+2. **Allocates capital** within user-defined guardrails
+3. **Executes trades** on connected exchanges using the user's own API keys
+4. **Monitors positions** continuously, managing stop-loss, take-profit, and reallocations
+5. **Adapts to regime shifts** by nudging users toward better-suited strategies and deploying them with approval
 
 ![Meet Warren](/images/warren/meet-warren.png)
 
-## Three guarantees
+## Core principles
 
-- No manual trading required. Warren handles execution.
-- Your funds stay in your exchange. API keys only, no withdrawals.
-- You stay in control. Set guardrails, pause anytime, override any recommendation.
+- **User-controlled trading.** Funds never leave the exchange. Kodeus requests API access only, no withdrawal permissions.
+- **Approval-driven.** Warren recommends and nudges, but deploys only with explicit user approval.
+- **Transparent performance.** Every trade is logged with full attribution. On-chain verification where applicable.
+- **Guardrails enforced.** Users set max drawdown, daily loss limits, and per-position sizing. Warren operates strictly within those bounds.
 
 ## What Warren is not
 
 - Not a custodian. Funds live on Binance, Kraken, OKX, or Bybit.
-- Not a black box. Every trade is logged in your portfolio with full attribution.
+- Not a black box. Every trade is logged in the portfolio with full attribution.
 - Not financial advice. Always review strategies before deploying.
 
 Next: [Quick Start](/docs/warren/getting-started/quick-start)
