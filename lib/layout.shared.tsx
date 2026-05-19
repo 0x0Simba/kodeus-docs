@@ -1,10 +1,14 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { gitConfig } from './shared';
 
+const logoSrc = process.env.NEXT_PUBLIC_SITE_URL
+  ? `${process.env.NEXT_PUBLIC_SITE_URL}/logo.svg`
+  : '/logo.svg';
+
 export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
-      title: <img src="/logo.svg" alt="Kodeus" className="h-6" />,
+      title: <img src={logoSrc} alt="Kodeus" className="h-6" />,
     },
     links: [
       {

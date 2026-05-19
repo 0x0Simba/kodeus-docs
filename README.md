@@ -27,7 +27,9 @@ Open http://localhost:3000
 
 ### Warren marketing site (`warren.kodeus.ai`)
 
-Docs live at `/docs` on the **marketing** Netlify site. Copy `netlify.warren-proxy.toml` into that site's `netlify.toml`, replace `DOCS_DEPLOY_URL` with this deploy's URL (e.g. `https://kodeus-docs.netlify.app`), and place those `[[redirects]]` **above** any SPA `/* → /index.html` rules.
+Docs are proxied at `/docs` on the **marketing** Netlify site. Copy `netlify.warren-proxy.toml` into that site's `netlify.toml`, replace `DOCS_DEPLOY_URL` with this deploy's URL (e.g. `https://magenta-cannoli-ae5215.netlify.app`), and place those `[[redirects]]` **above** any SPA `/* → /index.html` rule.
+
+This docs build sets `assetPrefix` to the Netlify `URL` so `/_next` and `/logo.svg` load from the docs deploy directly; Warren only needs `/docs/*` and `/api/*` proxies.
 
 ### Vercel (alternative)
 

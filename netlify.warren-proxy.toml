@@ -1,7 +1,12 @@
 # ---------------------------------------------------------------------------
-# Warren marketing site (warren.kodeus.ai) — copy these rules into THAT site's
-# netlify.toml (not this docs deploy). Replace DOCS_DEPLOY_URL with this
-# project's Netlify URL, e.g. https://kodeus-docs.netlify.app
+# Warren marketing site (warren.kodeus.ai) — copy into THAT site's netlify.toml.
+# Replace DOCS_DEPLOY_URL with this docs Netlify URL (no trailing slash), e.g.
+# https://magenta-cannoli-ae5215.netlify.app
+#
+# Place these rules ABOVE any SPA catch-all (/* → /index.html).
+#
+# Docs build uses absolute asset URLs (assetPrefix = Netlify URL), so you only
+# need /docs/* and /api/* here — not /_next/*.
 # ---------------------------------------------------------------------------
 
 [[redirects]]
@@ -16,45 +21,8 @@
   status = 200
   force = true
 
-# Next.js static assets (served at /_next on the docs deploy — do not use ASSET_PREFIX)
-[[redirects]]
-  from = "/_next/*"
-  to = "DOCS_DEPLOY_URL/_next/:splat"
-  status = 200
-  force = true
-
 [[redirects]]
   from = "/api/*"
   to = "DOCS_DEPLOY_URL/api/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/og/*"
-  to = "DOCS_DEPLOY_URL/og/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/llms.mdx/*"
-  to = "DOCS_DEPLOY_URL/llms.mdx/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/llms-full.txt"
-  to = "DOCS_DEPLOY_URL/llms-full.txt"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/llms.txt"
-  to = "DOCS_DEPLOY_URL/llms.txt"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/icon.svg"
-  to = "DOCS_DEPLOY_URL/icon.svg"
   status = 200
   force = true
