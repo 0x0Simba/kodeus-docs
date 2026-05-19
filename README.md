@@ -20,13 +20,19 @@ Open http://localhost:3000
 
 ## Deployment
 
-This repo is a standard Next.js app. Recommended: deploy to Vercel.
+### Netlify (this repo)
 
-1. Push to GitHub
-2. Import project on Vercel
-3. Framework preset: Next.js
-4. No env vars needed
-5. (Optional) Set custom domain `docs.kodeus.xyz`
+1. Push to GitHub and import on Netlify (framework: **Next.js**).
+2. `netlify.toml` sets `ASSET_PREFIX=/docs` so assets work under `warren.kodeus.ai/docs`.
+
+### Warren marketing site (`warren.kodeus.ai`)
+
+Docs live at `/docs` on the **marketing** Netlify site. Copy `netlify.warren-proxy.toml` into that site's `netlify.toml`, replace `DOCS_DEPLOY_URL` with this deploy's URL (e.g. `https://kodeus-docs.netlify.app`), and place those `[[redirects]]` **above** any SPA `/* → /index.html` rules.
+
+### Vercel (alternative)
+
+1. Import project, framework preset: Next.js
+2. (Optional) Custom domain `docs.kodeus.xyz`
 
 ## Editing Content
 

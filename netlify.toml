@@ -1,21 +1,15 @@
+# Docs site (this repo) — Next.js 16 + Fumadocs
+[build]
+  command = "npm run build"
+  publish = ".next"
+
 [build.environment]
   NODE_VERSION = "20"
+  # Static assets load at /docs/_next/* when proxied from warren.kodeus.ai/docs
+  ASSET_PREFIX = "/docs"
 
-# SPA fallback for direct Netlify deploys and /app/* when proxied from marketing.
+# Edge redirect on the docs deploy itself (direct URL or after proxy)
 [[redirects]]
   from = "/docs"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/docs/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[functions]
-  node_bundler = "esbuild"
+  to = "/docs/introduction/what-is-kodeus"
+  status = 307

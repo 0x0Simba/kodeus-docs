@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------------------
+# Warren marketing site (warren.kodeus.ai) — copy these rules into THAT site's
+# netlify.toml (not this docs deploy). Replace DOCS_DEPLOY_URL with this
+# project's Netlify URL, e.g. https://kodeus-docs.netlify.app
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/docs"
+  to = "DOCS_DEPLOY_URL/docs/introduction/what-is-kodeus"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "DOCS_DEPLOY_URL/docs/:splat"
+  status = 200
+  force = true
+
+# Next.js assets (when ASSET_PREFIX=/docs on the docs build)
+[[redirects]]
+  from = "/api/*"
+  to = "DOCS_DEPLOY_URL/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/og/*"
+  to = "DOCS_DEPLOY_URL/og/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/llms.mdx/*"
+  to = "DOCS_DEPLOY_URL/llms.mdx/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/llms-full.txt"
+  to = "DOCS_DEPLOY_URL/llms-full.txt"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/llms.txt"
+  to = "DOCS_DEPLOY_URL/llms.txt"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/icon.svg"
+  to = "DOCS_DEPLOY_URL/icon.svg"
+  status = 200
+  force = true
