@@ -1,0 +1,25 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# SPA fallback for direct Netlify deploys and /app/* when proxied from marketing.
+[[redirects]]
+  from = "/docs"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
