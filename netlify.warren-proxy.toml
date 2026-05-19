@@ -16,7 +16,13 @@
   status = 200
   force = true
 
-# Next.js assets (when ASSET_PREFIX=/docs on the docs build)
+# Next.js static assets (served at /_next on the docs deploy — do not use ASSET_PREFIX)
+[[redirects]]
+  from = "/_next/*"
+  to = "DOCS_DEPLOY_URL/_next/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/api/*"
   to = "DOCS_DEPLOY_URL/api/:splat"

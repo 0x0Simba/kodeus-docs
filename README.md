@@ -23,7 +23,7 @@ Open http://localhost:3000
 ### Netlify (this repo)
 
 1. Push to GitHub and import on Netlify (framework: **Next.js**).
-2. `netlify.toml` sets `ASSET_PREFIX=/docs` so assets work under `warren.kodeus.ai/docs`.
+2. Do **not** set `ASSET_PREFIX` — assets are served at `/_next/*` on this deploy.
 
 ### Warren marketing site (`warren.kodeus.ai`)
 

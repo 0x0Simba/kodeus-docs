@@ -5,10 +5,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  # Static assets load at /docs/_next/* when proxied from warren.kodeus.ai/docs
-  ASSET_PREFIX = "/docs"
 
-# Edge redirect on the docs deploy itself (direct URL or after proxy)
+# Edge redirect on the docs deploy itself
 [[redirects]]
   from = "/docs"
   to = "/docs/introduction/what-is-kodeus"
