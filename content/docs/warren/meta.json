@@ -1,13 +1,15 @@
 {
   "title": "Warren",
   "pages": [
-    "getting-started",
-    "connecting",
-    "chat",
-    "strategy-marketplace",
-    "bots",
-    "portfolio",
+    "overview",
+    "authentication",
+    "onboarding",
+    "strategies",
+    "modes",
+    "allocation",
+    "exchanges",
     "configuration",
+    "dashboard",
     "faq"
   ]
 }

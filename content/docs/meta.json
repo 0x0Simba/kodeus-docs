@@ -1,13 +1,6 @@
 {
-  "title": "Kodeus Docs",
+  "title": "Warren Docs",
   "pages": [
-    "introduction",
-    "core-concepts",
-    "build-agents",
-    "integrations",
-    "security",
-    "marketplace",
-    "warren",
-    "resources"
+    "warren"
   ]
 }
