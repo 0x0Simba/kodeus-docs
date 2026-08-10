@@ -9,5 +9,5 @@
 # Edge redirect on the docs deploy itself
 [[redirects]]
   from = "/docs"
-  to = "/docs/introduction/what-is-kodeus"
+  to = "/docs/warren/overview"
   status = 307

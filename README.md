@@ -1,6 +1,6 @@
-## Kodeus Docs
+## Warren Docs
 
-Public documentation for Kodeus and Warren, built with [Fumadocs](https://fumadocs.dev) on Next.js.
+Public documentation for Warren, the private AI fund manager on Kodeus. Built with [Fumadocs](https://fumadocs.dev) on Next.js.
 
 ## Local Development
 
